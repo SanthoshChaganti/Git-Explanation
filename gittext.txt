@@ -1,0 +1,26 @@
+Hello, This is Santhosh.
+
+git config --global user.name (eg username)
+git config --global user.email (eg email)
+git config --list  gives list of the user email and username
+
+
+git status
+git init  initialization of empty repository in the present working directory (pwd) 
+
+
+git add --a   add all the folders into the staging area
+
+git commit -m "Any Message"  to commit the changes in the repository
+git log   to know all the  commits made to the repository
+git add nameofthefiletoaddtotherepositorywithextension
+
+rm -rf .git   to delete the repository of the current pwd
+
+
+git clone link give a name to Repo if needed     to clone any repositoy
+
+pwd   to know the present working directory
+ls    to see all the folders or files present in the pwd
+cd directory    to go to the directory
+
