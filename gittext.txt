@@ -1,5 +1,10 @@
 Hello, This is Santhosh.
 
+Git Lifecycle  ---- Untracked  Unmodified  Modified  Staged
+
+
+q      --- used to close the terminal page
+
 git config --global user.name (eg username)
 git config --global user.email (eg email)
 git config --list  gives list of the user email and username
@@ -9,7 +14,7 @@ git status
 git init  initialization of empty repository in the present working directory (pwd) 
 
 
-git add --a                            -----add all the folders into the staging area
+git add --a  or (git add .)            -----add all the folders into the staging area
 
 git commit -m "Any Message"            ------ to commit the changes in the repository
 git log                                -----to know all the  commits made to the repository
@@ -18,7 +23,7 @@ git add nameofthefile                  -----toaddtotherepositorywithextension
 rm -rf .git                            -----   to delete the repository of the current pwd
 
 
-git clone link give a name to Repo     ------ to clone any repositoy
+git clone link give a name to Repo     ------ to clone any repository
 
 pwd                                    ----- to know the present working directory
 ls                                     ----- to see all the folders or files present in the pwd
@@ -26,10 +31,45 @@ cd directory                           ----- to go to the directory
 
 touch trasherror.log                   -----   creates a trasherrorr.log(a text file) file in the pwd
 
-touch .gitignore                       -----   creates .gitignore(a text file) file in the pwd  we can keep all the files that wanted to be untracked  
-                                               in the .gitignore file by just placing the name of the required ignoring files
+touch .gitignore                       -----   creates .gitignore(a text file) file in the pwd we can keep all the files that                                                                                                                                                                 
+                                               want to be untracked in the .gitignore file by just placing the name of the required ignoring files.
+					       if *.log is placed in the .gitignore  file then all log files are untracked. 
+					       We can also make particular folders or particular files untracked 
+					       by placing the directory into the .gitignore file.
+
+git diff                               -----  Gives the changes that are seen in the staging area and the pwd (Compare staging are and pwd)
+git diff --staged                      -----  Compares the staging area and the previous commit.
 
 
+git commit -a -m "Direct commit"       ----- Modified files can be directly committed without sending them to staging area 
+					     but newly created files cannot be directly committed.they need to be send to staging area before commit.
+
+git rm filename.extension              -----  Delete a file from the pwd
+git mv  oldfilename newfilename        -----  To rename a file from old name to new name   (renamed file will be sent to staging are automatically).
+git rm --cached filename               -----  To specify explicitly untrack a file that is initially tracked
+
+
+git log -p                             -----  Give the log details with the changes that are performed in that commit
+git log -p -n(n-a number)              -----  Give the log details with the changes that are performed in n commits
+git log --stat                         -----  Give the commits with some summary(More detailed)
+git log --pretty=oneline               -----  Give all the commits in one line each commit
+git log --pretty=short                 -----  only author and commit
+git log --pretty=full                  -----  author committer and commit
+git log --since=2.days()n.days(or)weeks etc) -----  upto the date the commit info is provided
+git log --pretty=format:"%h--%ae"      -----  to get the specific information about the previous commits(%n,%ae   etc are 
+                                              some format specifiers)  (https://git-scm.com/docs/git-log)
+
+
+git commit --amend                    -----  used to merge the new modification into the previous commit.Then a new terminal like 
+                                             page opened then press i to change the message at the top during the commit
+                                             after changing you press (:wq) to exit the new terminal and the changes got 
+                                             committed into the previous commit.
+
+git restore --staged <file>           -----  to unstage a staged file
+git checkout -- <file>                 ----- to get the previously deleted data in that file before committing the changes
+                                            (i.e  we get the data that is committed in the last commit) After staging we cannot 
+                 	    	 	    get back.
+git checkout -f                       -----  all files get the previous commit data. Not committed changes will be destroyed.
 
 
 
